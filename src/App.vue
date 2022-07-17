@@ -3,7 +3,7 @@
     <top-menu />
     <add-task-form />
     <hr>
-    <tasks-list />
+    <tasks-list :tasks="tasks"/>
   </div>
 </template>
 
@@ -11,13 +11,23 @@
 import TopMenu from '@/components/TopMenu.vue';
 import AddTaskForm from '@/components/AddTaskForm.vue'
 import TasksList from './components/TasksList.vue'
-  export default {
-    components: {
+export default {
+  components: {
     TopMenu,
     AddTaskForm,
     TasksList
-}
+  },
+  data() {
+    return {
+      tasks: [
+        {id: 1, description: 'Вынести мусор', completed: false},
+        {id: 2, description: 'Помыть посуду', completed: false},
+        {id: 3, description: 'Сходить к стоматологу', completed: false},
+        {id: 4, description: 'Купить хлеб', completed: false},
+      ]
+    } 
   }
+}
 </script>
 
 <style>
@@ -40,7 +50,7 @@ body {
 .todo__main{
   margin-top: 20px;
   width: 1000px;
-  height: 700px;
+  min-height: 700px;
   background: #2a3744;
   border-radius: 10px;
   padding: 40px

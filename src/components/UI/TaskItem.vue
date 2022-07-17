@@ -2,7 +2,7 @@
     <li class="task">
         <div>
             <i class="fa fa-check-square btn-done" aria-hidden="true"></i>
-            test1
+            {{ task.description }}
         </div>
         <i class="fa fa-trash-o btn-trash" aria-hidden="true"></i>
     </li>
@@ -10,7 +10,12 @@
 
 <script>
 export default {
-
+    props: {
+        task : {
+            type: Object,
+            required: true,
+        }
+    }
 }
 </script>
 
