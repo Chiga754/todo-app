@@ -1,13 +1,16 @@
 <template>
-    <div class="secton__date">
-        <div>Saturday, June 1</div>
-        <div class="active-tasks">3 Active Task</div> 
-    </div>
+    <div class="wrapper">
+        <div class="secton__date">
+            <div>Saturday, June 1</div>
+            <div class="active-tasks">3 Active Task</div> 
+        </div>
 
-    <div class="">
-        <a href="#" class="">Incomplete Tasks</a>
-        <a href="#">Complete Tasks</a>
+        <div class="">
+            <a href="#" class="">Incomplete Tasks</a>
+            <a href="#">Complete Tasks</a>
+        </div>
     </div>
+    
 
 </template>
 
@@ -18,6 +21,11 @@ export default {
 </script>
 
 <style scoped>
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
     .secton__date{
         color: #ffffff;
         font-size: 20px;

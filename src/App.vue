@@ -1,14 +1,17 @@
 <template>
   <div class="todo__main">
-    <top-menu></top-menu>
+    <top-menu />
+    <add-task-form />
   </div>
 </template>
 
 <script>
-import TopMenu from './components/TopMenu.vue';
+import TopMenu from '@/components/TopMenu.vue';
+import AddTaskForm from '@/components/AddTaskForm.vue'
   export default {
     components: {
       TopMenu,
+      AddTaskForm,
     }
   }
 </script>
@@ -36,8 +39,6 @@ body {
   height: 700px;
   background: #2a3744;
   border-radius: 10px;
-  display: flex;
-  justify-content: space-between;
   padding: 40px
 }
 </style>
