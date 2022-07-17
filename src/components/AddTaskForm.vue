@@ -13,6 +13,10 @@ export default {
 
 <style scoped>
 
+form{
+  margin-bottom: 40px;
+}
+
 input {
     min-width: 400px;
     padding: 15px 10px;
@@ -27,7 +31,7 @@ button {
     padding: 15px 10px;
     background: rgb(0, 204, 255);
     border: none;
-    border-radius: 2px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all .3s;
 }

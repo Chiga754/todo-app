@@ -2,17 +2,21 @@
   <div class="todo__main">
     <top-menu />
     <add-task-form />
+    <hr>
+    <tasks-list />
   </div>
 </template>
 
 <script>
 import TopMenu from '@/components/TopMenu.vue';
 import AddTaskForm from '@/components/AddTaskForm.vue'
+import TasksList from './components/TasksList.vue'
   export default {
     components: {
-      TopMenu,
-      AddTaskForm,
-    }
+    TopMenu,
+    AddTaskForm,
+    TasksList
+}
   }
 </script>
 
