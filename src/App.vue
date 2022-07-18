@@ -3,7 +3,11 @@
     <top-menu />
     <add-task-form />
     <hr>
-    <tasks-list :tasks="tasks"/>
+    <tasks-list 
+      :tasks="tasks" 
+      @completed="setCompletedTask"
+      @remove="removeTask"
+    />
   </div>
 </template>
 
@@ -24,8 +28,18 @@ export default {
         {id: 2, description: 'Помыть посуду', completed: false},
         {id: 3, description: 'Сходить к стоматологу', completed: false},
         {id: 4, description: 'Купить хлеб', completed: false},
+        {id: 5, description: 'Полить цветы', completed: true},
+        {id: 6, description: 'Купить молоко', completed: true},
       ]
     } 
+  },
+  methods: {
+    setCompletedTask(task) {
+      task.completed = !task.completed;
+    },
+    removeTask(task) {
+      this.tasks = this.tasks.filter(el => el.id !== task.id);
+    }
   }
 }
 </script>

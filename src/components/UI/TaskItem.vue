@@ -1,10 +1,18 @@
 <template>
-    <li class="task">
+    <li class="task" :class="{completed : task.completed}">
         <div>
-            <i class="fa fa-check-square btn-done" aria-hidden="true"></i>
+            <i 
+                class="fa fa-check-square btn-done" 
+                aria-hidden="true"
+                @click="$emit('completed', task)">
+            </i>
             {{ task.description }}
         </div>
-        <i class="fa fa-trash-o btn-trash" aria-hidden="true"></i>
+        <i 
+            class="fa fa-trash-o btn-trash" 
+            aria-hidden="true"
+            @click="$emit('remove', task)">
+        </i>
     </li>
 </template>
 
@@ -51,5 +59,8 @@ li:hover {
 }
 .btn-trash:hover{
     color: rgb(240, 54, 54);
+}
+.completed {
+    background: rgba(9, 255, 9, 0.548);
 }
 </style>

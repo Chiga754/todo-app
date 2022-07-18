@@ -4,6 +4,8 @@
             v-for="task in tasks" 
             :key="task.id"
             :task="task"
+            @completed="$emit('completed', task)"
+            @remove="$emit('remove', task)"
         /> 
     </ul>
 </template>
