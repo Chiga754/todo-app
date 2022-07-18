@@ -1,7 +1,7 @@
 <template>
     <div class="wrapper">
         <div class="secton__date">
-            <div>Saturday, June 1</div>
+            <div>{{ `${dayOfWeek}, ${month} ${day} `}}</div>
             <div class="active-tasks">3 Active Task</div> 
         </div>
 
@@ -15,8 +15,15 @@
 </template>
 
 <script>
+import { useDate } from '@/hooks/useDate';
 export default {
+    setup(props) {
+        const {dayOfWeek, month, day} = useDate();
 
+        return {
+            dayOfWeek, month, day,
+        }
+    }
 }
 </script>
 
