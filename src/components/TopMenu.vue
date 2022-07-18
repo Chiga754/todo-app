@@ -2,7 +2,7 @@
     <div class="wrapper">
         <div class="secton__date">
             <div>{{ `${dayOfWeek}, ${month} ${day} `}}</div>
-            <div class="active-tasks">3 Active Task</div> 
+            <div class="active-tasks">{{ getCompletedTasksNum() }} Active Task</div> 
         </div>
 
         <div class="">
@@ -17,11 +17,25 @@
 <script>
 import { useDate } from '@/hooks/useDate';
 export default {
+    props: {
+        tasks : {
+            type: Array,
+            requared: true,
+        }
+    },
     setup(props) {
         const {dayOfWeek, month, day} = useDate();
 
         return {
             dayOfWeek, month, day,
+        }
+    },
+    methods: {
+        getCompletedTasksNum() {
+            return this.tasks.reduce((acc, task) => {
+                if(!task.completed){acc++};
+                return acc;
+            }, 0);
         }
     }
 }

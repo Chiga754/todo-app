@@ -1,6 +1,6 @@
 <template>
   <div class="todo__main">
-    <top-menu />
+    <top-menu :tasks="tasks"/>
     <add-task-form />
     <hr>
     <tasks-list 
