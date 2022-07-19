@@ -1,7 +1,7 @@
 <template>
   <div class="todo__main">
     <top-menu :tasks="tasks"/>
-    <add-task-form />
+    <add-task-form @create="createTask"/>
     <hr>
     <tasks-list 
       :tasks="tasks" 
@@ -39,6 +39,9 @@ export default {
     },
     removeTask(task) {
       this.tasks = this.tasks.filter(el => el.id !== task.id);
+    },
+    createTask(task) {
+      this.tasks.push(task)
     }
   }
 }

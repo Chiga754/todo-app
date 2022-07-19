@@ -36,7 +36,7 @@ export default {
                 if(!task.completed){acc++};
                 return acc;
             }, 0);
-        }
+        },
     }
 }
 </script>

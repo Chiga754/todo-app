@@ -1,13 +1,34 @@
 <template>
   <form>
-    <input type="text" placeholder="Enter a task...">
-    <button>Add Task</button>
+    <input 
+      type="text" 
+      placeholder="Enter a task..."
+      v-model="task.description"
+    >
+    <button @click="createTask">Add Task</button>
   </form>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      task: {
+        description: '',
+        completed: false,
+      }
+    }
+  },
+  methods: {
+    createTask () {
+      this.task.id = Date.now();
+      this.$emit('create', this.task)
+      this.task = {
+        description: '',
+        completed: false,
+      }
+    }
+  }
 }
 </script>
 
