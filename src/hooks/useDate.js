@@ -42,40 +42,40 @@ export function useDate() {
     function getMonth( num ) {
         switch (num) {
             case 0:
-                dayOfWeek.value = "Январь";
+                month.value = "Январь";
                 break;
             case 1:
-                dayOfWeek.value = "Февраль";
+                month.value = "Февраль";
                 break;
             case 2:
-                dayOfWeek.value = "Март";
+                month.value = "Март";
                 break;
             case 3:
-                dayOfWeek.value = "Апрель";
+                month.value = "Апрель";
                 break;
             case 4:
-                dayOfWeek.value = "Май";
+                month.value = "Май";
                 break;
             case 5:
-                dayOfWeek.value = "Июнь";
+                month.value = "Июнь";
                 break;
             case 6:
-                dayOfWeek.value = "Июль";
+                month.value = "Июль";
                 break;
             case 7:
-                dayOfWeek.value = "Август";
+                month.value = "Август";
                 break;
             case 8:
-                dayOfWeek.value = "Сентябрь";
+                month.value = "Сентябрь";
                 break;
             case 9:
-                dayOfWeek.value = "Октябрь";
+                month.value = "Октябрь";
                 break;
             case 10:
-                dayOfWeek.value = "Ноябрь";
+                month.value = "Ноябрь";
                 break;
             case 11:
-                dayOfWeek.value = "Декабрь";
+                month.value = "Декабрь";
                 break; 
             default:
                 break;
