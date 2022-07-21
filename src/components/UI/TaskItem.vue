@@ -1,5 +1,5 @@
 <template>
-    <li class="task" :class="{completed : task.completed}">
+    <li v-if="task.show" class="task" :class="{completed : task.completed}">
         <div>
             <i 
                 class="fa fa-check-square btn-done" 

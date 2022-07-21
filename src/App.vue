@@ -1,6 +1,6 @@
 <template>
   <div class="todo__main">
-    <top-menu :tasks="tasks"/>
+    <top-menu :tasks="tasks" @setCompleted="sortedTasks"/>
     <add-task-form @create="createTask"/>
     <hr>
     <tasks-list 
@@ -24,12 +24,12 @@ export default {
   data() {
     return {
       tasks: [
-        {id: 1, description: 'Вынести мусор', completed: false},
-        {id: 2, description: 'Помыть посуду', completed: false},
-        {id: 3, description: 'Сходить к стоматологу', completed: false},
-        {id: 4, description: 'Купить хлеб', completed: false},
-        {id: 5, description: 'Полить цветы', completed: true},
-        {id: 6, description: 'Купить молоко', completed: true},
+        {id: 1, description: 'Вынести мусор', completed: false, show: true},
+        {id: 2, description: 'Помыть посуду', completed: false, show: true},
+        {id: 3, description: 'Сходить к стоматологу', completed: false, show: true},
+        {id: 4, description: 'Купить хлеб', completed: false, show: true},
+        {id: 5, description: 'Полить цветы', completed: true, show: true},
+        {id: 6, description: 'Купить молоко', completed: true, show: true},
       ]
     } 
   },
@@ -42,6 +42,16 @@ export default {
     },
     createTask(task) {
       this.tasks.push(task)
+    },
+    sortedTasks(sort){
+      this.tasks.forEach(task => {
+        if(sort === 'incomplete'){
+          task.completed ? task.show = false : task.show = true;
+        }
+        if(sort === 'complete'){
+          task.completed ? task.show = true : task.show = false;
+        }
+      })
     }
   }
 }

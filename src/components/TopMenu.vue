@@ -6,8 +6,8 @@
         </div>
 
         <div class="">
-            <a href="#" class="">Incomplete Tasks</a>
-            <a href="#">Complete Tasks</a>
+            <a href="#" class="" @click.prevent="$emit('setCompleted', 'incomplete')">Incomplete Tasks</a>
+            <a href="#" @click.prevent="$emit('setCompleted', 'complete')">Complete Tasks</a>
         </div>
     </div>
     
