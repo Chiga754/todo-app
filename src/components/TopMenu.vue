@@ -5,7 +5,7 @@
             <div class="active-tasks">{{ getCompletedTasksNum() }} Active Task</div> 
         </div>
 
-        <div class="">
+        <div class="sorted__items">
             <a href="#" 
                 :class="{active: sortedValue === 'incomplete'}" 
                 @click.prevent="$emit('setCompleted', 'incomplete')
@@ -91,6 +91,9 @@ export default {
         .wrapper{
             padding: 15px;
             text-align: center;
+        }
+        .sorted__items{
+            margin-top: 20px;
         }
     }
 </style>
