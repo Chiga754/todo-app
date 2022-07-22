@@ -21,6 +21,10 @@ export default {
   },
   methods: {
     createTask () {
+      if(!this.task.description.length) {
+        alert('Введите текст задачи');
+        return;
+      };
       this.task.id = Date.now();
       this.task.show = true;
       this.$emit('create', this.task)
