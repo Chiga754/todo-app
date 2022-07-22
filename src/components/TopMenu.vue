@@ -6,8 +6,15 @@
         </div>
 
         <div class="">
-            <a href="#" class="" @click.prevent="$emit('setCompleted', 'incomplete')">Incomplete Tasks</a>
-            <a href="#" @click.prevent="$emit('setCompleted', 'complete')">Complete Tasks</a>
+            <a href="#" 
+                :class="{active: sortedValue === 'incomplete'}" 
+                @click.prevent="$emit('setCompleted', 'incomplete')
+
+            ">Incomplete Tasks</a>
+            <a href="#" 
+                :class="{active: sortedValue === 'complete'}"
+                @click.prevent="$emit('setCompleted', 'complete')"
+            >Complete Tasks</a>
         </div>
     </div>
     
@@ -21,6 +28,9 @@ export default {
         tasks : {
             type: Array,
             requared: true,
+        },
+        sortedValue: {
+            type: String,
         }
     },
     setup(props) {

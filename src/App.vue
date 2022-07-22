@@ -1,6 +1,6 @@
 <template>
   <div class="todo__main">
-    <top-menu :tasks="tasks" @setCompleted="sortedTasks"/>
+    <top-menu :tasks="tasks" :sortedValue="sortedValue" @setCompleted="setSortedValue"/>
     <add-task-form @create="createTask"/>
     <hr>
     <tasks-list 
@@ -24,18 +24,17 @@ export default {
   data() {
     return {
       tasks: [
-        {id: 1, description: 'Вынести мусор', completed: false, show: true},
-        {id: 2, description: 'Помыть посуду', completed: false, show: true},
-        {id: 3, description: 'Сходить к стоматологу', completed: false, show: true},
-        {id: 4, description: 'Купить хлеб', completed: false, show: true},
-        {id: 5, description: 'Полить цветы', completed: true, show: true},
-        {id: 6, description: 'Купить молоко', completed: true, show: true},
-      ]
+        {id: 1, description: 'Задача №1', completed: false, show: true},
+        {id: 2, description: 'Задача №2', completed: false, show: true},
+        {id: 3, description: 'Задача №3', completed: false, show: true},
+      ],
+      sortedValue: 'incomplete',
     } 
   },
   methods: {
     setCompletedTask(task) {
       task.completed = !task.completed;
+      this.sortedTasks(this.sortedValue);
     },
     removeTask(task) {
       this.tasks = this.tasks.filter(el => el.id !== task.id);
@@ -52,7 +51,19 @@ export default {
           task.completed ? task.show = true : task.show = false;
         }
       })
+    },
+    setSortedValue(value) {
+      this.sortedValue = value;
     }
+  },
+  watch: {
+    sortedValue() {
+      this.sortedTasks(this.sortedValue);
+      console.log('Значнеи ищменилось!')
+    }
+  },
+  mounted() {
+    this.sortedTasks(this.sortedValue);
   }
 }
 </script>

@@ -22,6 +22,7 @@ export default {
   methods: {
     createTask () {
       this.task.id = Date.now();
+      this.task.show = true;
       this.$emit('create', this.task)
       this.task = {
         description: '',
