@@ -78,4 +78,19 @@ export default {
         font-size: 16px;
         color: rgb(0, 204, 255);;
     }
+
+    @media (max-width: 660px) {
+        .wrapper{
+            flex-direction: column;
+        }
+        a{
+            margin: 0 15px 0 0;
+        }
+    }
+    @media (max-width: 580px) {
+        .wrapper{
+            padding: 15px;
+            text-align: center;
+        }
+    }
 </style>

@@ -60,4 +60,14 @@ button {
 button:hover {
     background: rgb(0, 119, 255);
 }
+
+  @media (max-width: 580px) {
+    form {
+      text-align: center;
+    }
+    input {
+      min-width: 0px;
+    }
+  }
+
 </style>

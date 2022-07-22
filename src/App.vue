@@ -93,4 +93,16 @@ body {
   border-radius: 10px;
   padding: 40px
 }
+
+@media (max-width: 580px) {
+  .todo__main{
+    padding: 0;
+    margin-top: 0;
+    border-radius: 0;
+    min-height: 0px;
+  }
+  body{
+    background: #2a3744;
+  }
+}
 </style>
