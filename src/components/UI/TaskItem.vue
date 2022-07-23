@@ -2,14 +2,14 @@
     <li v-if="task.show" class="task" :class="{completed : task.completed}">
         <div>
             <i 
-                class="fa fa-check-square btn-done" 
+                class="btn-done fa fa-check-square" 
                 aria-hidden="true"
                 @click="$emit('completed', task)">
             </i>
             {{ task.description }}
         </div>
         <i 
-            class="fa fa-trash-o btn-trash" 
+            class="btn-trash fa fa-trash-o" 
             aria-hidden="true"
             @click="$emit('remove', task)">
         </i>
@@ -46,7 +46,7 @@ li:hover {
   background: rgba(0, 204, 255, 0.493);
 }
 .btn-done {
-    font-size: 25px;
+    font-size: 25px !important;
     margin-right: 20px;
     transition: all .2s;
 }
@@ -54,7 +54,7 @@ li:hover {
     color: rgba(9, 255, 9, 0.548);
 }
 .btn-trash {
-    font-size: 25px;
+    font-size: 25px !important;
     transition: all .2s;
 }
 .btn-trash:hover{
